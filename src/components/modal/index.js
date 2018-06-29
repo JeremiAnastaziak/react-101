@@ -16,12 +16,13 @@ function ModalContent(props) {
 class Modal extends Component {
   constructor(props) {
     super(props);
-    this.el = document.createElement('div');
+    this.el = document.createElement('dialog');
     this.el.className = 'modal';
   }
 
   componentDidMount() {
     modalRoot.appendChild(this.el);
+    this.el.showModal();
   }
 
   componentWillUnmount() {
