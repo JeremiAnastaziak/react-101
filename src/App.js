@@ -1,25 +1,17 @@
-import React, { Component } from 'react';
-import Input, { LogPropsInput } from './components/input';
+import React, { Component, Fragment } from 'react';
+import Form from './components/form';
+import Logger from './components/logger';
+import AppStateProvider from './contexts/AppState/Provider';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.inputRef = React.createRef();
-    this.inputRefHOC = React.createRef();
-  }
-  componentDidMount() {
-    this.inputRefHOC.current.focus();
-  }
-
   render() {
     return (
-      <div className="App">
-        <h2>
-          Forwarding refs
-        </h2>
-        <Input ref={this.inputRef}/>
-        <LogPropsInput ref={this.inputRefHOC}/>
-      </div>
+      <Fragment>
+        <AppStateProvider>
+          <Form />
+        </AppStateProvider>
+      </Fragment>
+
     );
   }
 }
