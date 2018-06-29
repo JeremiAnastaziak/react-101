@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Input, { InputWithPropsLogger } from '../input';
+import Modal from '../modal';
 import withAppState from '../../contexts/AppState/with';
 import Logger from '../logger';
 
@@ -8,6 +9,11 @@ class Form extends Component {
     super();
     this.inputRefHOC = React.createRef();
   }
+
+  state = {
+    showModal: false,
+  }
+
   componentDidMount() {
     this.inputRefHOC.current.focus();
   }
@@ -15,6 +21,12 @@ class Form extends Component {
   handleOnChange = (e) => {
     this.props.AppState.setState({
       value: e.target.value
+    })
+  }
+
+  toggleModal = () => {
+    this.setState({
+      showModal: !this.state.showModal
     })
   }
 
@@ -28,6 +40,16 @@ class Form extends Component {
 
         <p>This one not</p>
         <InputWithPropsLogger ref={this.inputRefHOC} defaultValue={AppState.value} />
+
+        <p>Modal Portal</p>
+        <button onClick={this.toggleModal}>
+          Show modal
+        </button>
+
+        {this.state.showModal &&
+          <Modal dismiss={this.toggleModal}>
+            Modal content
+          </Modal>}
 
         <p>App state context</p>
         <Logger data={AppState}/>

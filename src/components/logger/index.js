@@ -1,5 +1,4 @@
 import React from 'react';
-import withAppState from '../HOC/withAppState';
 
 function Logger({ data }) {
   return (
@@ -9,4 +8,4 @@ function Logger({ data }) {
   )
 }
 
-export default withAppState(Logger);
+export default Logger;

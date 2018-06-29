@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <Fragment>
         <AppStateProvider>
-          <Form />
+          <Form onClick={console.log}/>
         </AppStateProvider>
       </Fragment>
 
