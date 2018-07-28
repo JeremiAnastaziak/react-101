@@ -35,6 +35,9 @@ class Form extends Component {
 
     return(
       <React.Fragment>
+        <p>App state context</p>
+        <Logger data={AppState}/>
+
         <p>This one updates context (onChange prop passed)</p>
         <Input onChange={this.handleOnChange} defaultValue={AppState.value} />
 
@@ -50,9 +53,6 @@ class Form extends Component {
           <Modal dismiss={this.toggleModal}>
             Modal content
           </Modal>}
-
-        <p>App state context</p>
-        <Logger data={AppState}/>
       </React.Fragment>
     )
   }
