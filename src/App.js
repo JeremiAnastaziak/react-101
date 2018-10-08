@@ -4,6 +4,8 @@ import MousePosition from './components/mousePosition';
 import Logger from './components/logger';
 import AppStateProvider from './contexts/AppState/Provider';
 import TextArea from './components/textarea';
+import Counter from './components/counter';
+
 class App extends Component {
   render() {
     return (
@@ -17,9 +19,9 @@ class App extends Component {
             </React.Fragment>
           }/>
           <TextArea />
+          <Counter />
         </AppStateProvider>
       </Fragment>
-
     );
   }
 }
