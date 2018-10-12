@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reducer handles actions 1`] = `
+Object {
+  "counter": 11,
+}
+`;
+
+exports[`reducer handles actions 2`] = `
+Object {
+  "counter": 9,
+}
+`;
+
+exports[`reducer returns default state on unknown action 1`] = `
+Object {
+  "counter": 10,
+}
+`;
