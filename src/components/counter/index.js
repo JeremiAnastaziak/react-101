@@ -1,24 +1,12 @@
-import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { increment, decrement } from '../../redux/actions';
 
-class Counter extends PureComponent {
-    render() {
-        return (
-            <>
-                <p>Redux counter</p>
-                <button onClick={this.props.decrement}>-</button>
-                <input type="text" value={this.props.value} />
-                <button onClick={this.props.increment}>+</button>
-            </>
-        )
-    }
-}
+import * as actions from '../../redux/actions';
+import Counter from './Counter';
 
 export default connect(
-    ({ counter }) => ({ value: counter }),
-    {
-        increment,
-        decrement
-    }
-    )(Counter);
+  ({ counter }) => ({ value: counter }),
+  {
+    increment: actions.increment,
+    decrement: actions.decrement,
+  },
+)(Counter);

@@ -21,7 +21,8 @@
     "eslint": "^5.0.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-jsx-a11y": "^5.0.0",
-    "eslint-plugin-react": "^7.10.0"
+    "eslint-plugin-react": "^7.10.0",
+    "react-test-renderer": "^16.5.2"
   },
   "browserslist": [
     ">0.2%",

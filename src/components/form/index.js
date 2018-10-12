@@ -19,24 +19,27 @@ class Form extends Component {
   }
 
   handleOnChange = (e) => {
-    this.props.AppState.setState({
-      value: e.target.value
-    })
+    const { AppState } = this.props;
+    AppState.setState({
+      value: e.target.value,
+    });
   }
 
   toggleModal = () => {
+    const { showModal } = this.state;
     this.setState({
-      showModal: !this.state.showModal
-    })
+      showModal: !showModal,
+    });
   }
 
-  render(){
+  render() {
     const { AppState } = this.props;
+    const { showModal } = this.state;
 
-    return(
+    return (
       <React.Fragment>
         <p>App state context</p>
-        <Logger data={AppState}/>
+        <Logger data={AppState} />
 
         <p>This one updates context (onChange prop passed)</p>
         <Input onChange={this.handleOnChange} defaultValue={AppState.value} />
@@ -45,16 +48,18 @@ class Form extends Component {
         <InputWithPropsLogger ref={this.inputRefHOC} defaultValue={AppState.value} />
 
         <p>Modal Portal</p>
-        <button onClick={this.toggleModal}>
+        <button onClick={this.toggleModal} type="button">
           Show modal
         </button>
 
-        {this.state.showModal &&
+        {showModal
+          && (
           <Modal dismiss={this.toggleModal}>
             Modal content
-          </Modal>}
+          </Modal>
+          )}
       </React.Fragment>
-    )
+    );
   }
 }
 
