@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`actions returns correct decrement action 1`] = `
+Object {
+  "payload": Object {
+    "amount": -1,
+  },
+  "type": "DECREMENT",
+}
+`;
+
+exports[`actions returns correct increment action 1`] = `
+Object {
+  "payload": Object {
+    "amount": 1,
+  },
+  "type": "INCREMENT",
+}
+`;
